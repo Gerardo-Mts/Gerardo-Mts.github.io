@@ -3,6 +3,14 @@ export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
 		extend: {
+			// Custom colors
+
+			colors: {
+				vividGreen: '#00AB35',
+			},
+		
+
+			// Custom fonts
 			fontFamily: {
 				'next-art': ['Next Art', 'sans-serif'],
 			},

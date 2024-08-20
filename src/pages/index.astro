@@ -2,15 +2,36 @@
 import Layout from "../layouts/Layout.astro";
 import Main from "../components/Main.astro";
 import H1 from "../components/H1.astro";
+import Button from "../components/Button.astro";
+
+// import the Image component from Astro and the main landing page image
+import { Image } from "astro:assets";
+import mainLandingPage from "./assets/main-landing-image.jpeg";
 ---
 
 <Layout title="Gerardo Miramontes">
 	<Main>
 		<!-- H1 : Es el titulo de la pagina, cambialo para actualizarlo -->
-		<H1 text="Diálogo con Diego Dreyfus" />
+		<H1 text="Diálogo con Gerardo Miramontes" />
+
+		<!-- Subtitulo de la pagina -->
 		<p class="text-white text-center text-2xl">
 			Una plática profunda y limitada a 40 humanos interesados en
 			empujarse a ser su mejor puta versión
 		</p>
+
+		<!-- Imagen de bienvenida -->
+		<div class="flex justify-center mt-10">
+			<Image
+				class="w-full sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-1/3 h-auto object-cover"
+				src={mainLandingPage}
+				alt="Gerardo Miramontes Main Landing Page Image"
+			/>
+		</div>
+
+		<!-- Boton de registro -->
+		<div class="flex justify-center mt-10">
+			<Button text="Registar inmediatamente"/>
+		</div>
 	</Main>
 </Layout>
