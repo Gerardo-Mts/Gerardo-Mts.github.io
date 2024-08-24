@@ -1,0 +1,117 @@
+---
+import Button from "./Button.astro";
+---
+
+<form
+    class="space-y-4 bg-transparent p-6 rounded-lg shadow-lg max-w-md mx-auto"
+>
+    <!-- Error Message -->
+    <p id="error-message" class="text-yellow-300 mt-4 hidden text-center">
+        Error message
+    </p>
+
+    <!-- Name Field -->
+    <div class="flex items-center bg-white rounded-full py-2 px-4">
+        <span class="text-gray-500 pr-3">📛</span>
+        <input
+            class="appearance-none bg-transparent border-none w-full text-gray-700 py-2 px-4 rounded-full focus:outline-none"
+            type="text"
+            placeholder="Tu nombre"
+            aria-label="Tu nombre"
+        />
+    </div>
+
+    <!-- Email Field -->
+    <div class="flex items-center bg-white rounded-full py-2 px-4">
+        <span class="text-gray-500 pr-3">✉️</span>
+        <input
+            class="appearance-none bg-transparent border-none w-full text-gray-700 py-2 px-4 rounded-full focus:outline-none"
+            type="email"
+            placeholder="Tu Email"
+            aria-label="Tu Email"
+        />
+    </div>
+
+    <!-- Phone Field -->
+    <div class="flex items-center bg-white rounded-full py-2 px-4">
+        <span class="text-gray-500 pr-3">📞</span>
+        <input
+            class="appearance-none bg-transparent border-none w-full text-gray-700 py-2 px-4 rounded-full focus:outline-none"
+            type="tel"
+            placeholder="Tu teléfono"
+            aria-label="Tu teléfono"
+        />
+    </div>
+
+    <!-- Submit Button -->
+    <div class="flex justify-center mt-10">
+        <Button text="Reservar cupo" />
+    </div>
+
+    <script>
+        // Ensure all the fields are filled before submitting the form
+        const form = document.querySelector("form");
+        const errorMessage = document.getElementById("error-message");
+
+        if (form) {
+            form.addEventListener("submit", function (event) {
+                const nameInput = form.querySelector(
+                    'input[type="text"]',
+                ) as HTMLInputElement;
+                const emailInput = form.querySelector(
+                    'input[type="email"]',
+                ) as HTMLInputElement;
+                const phoneInput = form.querySelector(
+                    'input[type="tel"]',
+                ) as HTMLInputElement;
+
+                const name = nameInput.value;
+                const email = emailInput.value;
+                const phone = phoneInput.value;
+
+                // Phone an email regex
+                const phoneRegex = /^[\+]?[(]?([0-9]{2}|[0-9]{3})[)]?[-\s\.]?([0-9]{2}[-\s\.]?){2,4}[0-9]{2}$/;
+                const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,}$/;
+
+                if (!name && !email && !phone) {
+                    event.preventDefault();
+                    if (errorMessage) {
+                        errorMessage.textContent =
+                            "Por favor llena todos los campos antes de enviar el formulario";
+                        errorMessage.classList.remove("hidden");
+                    }
+                } else if (!name) {
+                    event.preventDefault();
+                    if (errorMessage) {
+                        errorMessage.textContent = "Por favor llena tu nombre";
+                        errorMessage.classList.remove("hidden");
+                    }
+                } else if (!email) {
+                    event.preventDefault();
+                    if (errorMessage) {
+                        errorMessage.textContent = "Por favor llena tu email";
+                        errorMessage.classList.remove("hidden");
+                    }
+                } else if (!emailRegex.test(email)) {
+                    event.preventDefault();
+                    if (errorMessage) {
+                        errorMessage.textContent =
+                            "Por favor ingresa un email válido";
+                        errorMessage.classList.remove("hidden");
+                    }
+                } else if (!phone) {
+                    event.preventDefault();
+                    if (errorMessage) {
+                        errorMessage.textContent =
+                            "Por favor llena tu teléfono";
+                        errorMessage.classList.remove("hidden");
+                    }
+                } else {
+                    if (errorMessage) {
+                        errorMessage.classList.add("hidden");
+                    }
+                }
+            });
+        }
+    </script>
+</form>
