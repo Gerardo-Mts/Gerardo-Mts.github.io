@@ -9,7 +9,7 @@ const SERVER_PORT = 4321;
 const LOCAL_HOST_URL = `http://localhost:${SERVER_PORT}`;
 
 // Url to access the page during production
-const PRODUCTION_URL = 'https://github.com/Gerardo-Mts/';
+const PRODUCTION_URL = 'https://gerardo.miramontes.github.io';
 
 
 // Astro command npm script runs
