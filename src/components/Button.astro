@@ -1,14 +1,14 @@
 ---
 type Props = {
     text: string;
-    colorClass?: string; // Optional property for color class
+    colorClass?: string;
 };
 
-const { text, colorClass = "bg-vividGreen" } = Astro.props; // Default to 'bg-customGreen'
+const { text, colorClass = "bg-vividGreen" } = Astro.props;
+
 ---
 
 <button
-    class={`${colorClass} hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full uppercase`}
->
+    class={`${colorClass} hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full uppercase`}>
     {text}
 </button>
