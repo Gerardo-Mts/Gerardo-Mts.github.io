@@ -1,5 +1,5 @@
 ---
-// import Footer from "../components/Footer.astro";
+import Footer from "../components/Footer.astro";
 interface Props {
 	title: string;
 }
@@ -17,11 +17,17 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	
+
 	<body class="min-h-screen grid bg-black">
 		<slot />
 	</body>
-	
-	<!-- <Footer /> -->
 
-	</html>
+	<!-- <Footer /> -->
+	<Footer
+		facebookLink="https://www.facebook.com/profile.php?id=100069680796380"
+		instagramLink="https://www.instagram.com/gerardo_miramontess/"
+		twitterLink="https://x.com/GeritaMiramont2"
+		youtubeLink="https://www.youtube.com/channel/UCqkp4rix7XMzQY8scqNH4Hw"
+		spotifyLink="https://open.spotify.com/show/3F30x03LNKqKXfdZnGGr8B?si=936cc825a04340f1"
+	/>
+</html>
