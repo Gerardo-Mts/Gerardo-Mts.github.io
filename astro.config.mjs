@@ -9,7 +9,7 @@ const SERVER_PORT = 4321;
 const LOCAL_HOST_URL = `http://localhost:${SERVER_PORT}`;
 
 // Url to access the page during production
-const PRODUCTION_URL = 'https://gerardo-mts.github.io/gerardo.miramontes.github.io';
+const PRODUCTION_URL = 'https://Gerardo-Mts.github.io';
 
 
 // Astro command npm script runs
@@ -19,14 +19,10 @@ const isBuild = ASTRO_SCRIPT.includes("astro build");
 // Set the base URL for the site
 const BASE_URL = isBuild ? PRODUCTION_URL : LOCAL_HOST_URL;
 
-// Set the base path for the site
-const BASE_PATH = isBuild ? 'gerardo.miramontes.github.io' : '/';
-
 
 // https://astro.build/config
 export default defineConfig({
   server: { port: SERVER_PORT },
   site: BASE_URL,
-  base: BASE_PATH,
   integrations: [tailwind()],
 });
