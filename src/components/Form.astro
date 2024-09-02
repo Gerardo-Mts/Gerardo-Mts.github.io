@@ -21,6 +21,7 @@ import Button from "./Button.astro";
             type="text"
             placeholder="Tu nombre"
             aria-label="Tu nombre"
+            id="name"
         />
     </div>
 
@@ -35,8 +36,8 @@ import Button from "./Button.astro";
             type="email"
             placeholder="Tu Email"
             aria-label="Tu Email"
-            pattern="[\w-\.]+@([\w-]+\.)+[\w-]{2,}"
             title="Por favor ingresa un email válido"
+            id="email"
         />
     </div>
 
@@ -51,94 +52,88 @@ import Button from "./Button.astro";
             type="tel"
             placeholder="Tu teléfono"
             aria-label="Tu teléfono"
-            pattern="[\+]?[(]?([0-9]{2}|[0-9]{3})[)]?[-\s\.]?([0-9]{2}[-\s\.]?){2,4}[0-9]{2}"
             title="Por favor ingresa un teléfono válido"
+            id="phone"
         />
     </div>
 
     <!-- Submit Button -->
     <div class="flex justify-center mt-10">
-        <Button
-            text="Reservar cupo"
-            colorClass="bg-vividGreen px-6"
-        />
+        <Button text="Reservar cupo" colorClass="bg-vividGreen px-6" />
     </div>
 
     <script>
-        // Ensure all the fields are filled before submitting the form
-        const form = document.querySelector("form");
-        const errorMessage = document.getElementById("error-message");
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.querySelector("form");
+            const errorMessage = document.getElementById("error-message");
 
-        if (form) {
-            form.addEventListener("submit", function (event) {
-                const nameInput = document
-                    .getElementById("nameElement")
-                    ?.querySelector("input");
-                const emailInput = document
-                    .getElementById("emailElement")
-                    ?.querySelector("input");
-                const phoneInput = document
-                    .getElementById("phoneElement")
-                    ?.querySelector("input");
+            if (form) {
+                form.addEventListener("submit", async function (event) {
+                    event.preventDefault(); // Prevent the form from submitting the traditional way
 
-                const name = nameInput?.value ?? "";
-                const email = emailInput?.value ?? "";
-                const phone = phoneInput?.value ?? "";
+                    const nameInput = document.getElementById("name") as HTMLInputElement | null;
+                    const emailInput = document.getElementById("email") as HTMLInputElement | null;
+                    const phoneInput = document.getElementById("phone") as HTMLInputElement | null;
 
-                // Log the values to the console
-                // console.log(`Name: ${name}, Email: ${email}, Phone: ${phone}`);
+                    if (nameInput && emailInput && phoneInput) {
+                        const name = nameInput.value.trim();
+                        const email = emailInput.value.trim();
+                        const phone = phoneInput.value.trim();
+                        
+                        // Phone and email regex
+                        const phoneRegex = /^[\+]?[(]?([0-9]{2}|[0-9]{3})[)]?[-\s\.]?([0-9]{2}[-\s\.]?){2,4}[0-9]{2}$/;
+                        const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,}$/;
 
-                // Phone and email regex
-                const phoneRegex =
-                    /^[\+]?[(]?([0-9]{2}|[0-9]{3})[)]?[-\s\.]?([0-9]{2}[-\s\.]?){2,4}[0-9]{2}$/;
-                const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,}$/;
+                        if (!name || !email || !phone || !emailRegex.test(email) || !phoneRegex.test(phone)) {
+                            let errorText = "";
+                            if (!name) errorText = "Por favor llena tu nombre";
+                            else if (!email) errorText = "Por favor llena tu email";
+                            else if (!emailRegex.test(email)) errorText = "Por favor ingresa un email válido";
+                            else if (!phone) errorText = "Por favor llena tu teléfono";
+                            else if (!phoneRegex.test(phone)) errorText = "Por favor ingresa un teléfono válido";
+                            
+                            if (errorMessage) {
+                                errorMessage.textContent = errorText;
+                                errorMessage.classList.remove("hidden");
+                            }
+                        } else {
+                            if (errorMessage) errorMessage.classList.add("hidden");
 
-                if (!name && !email && !phone) {
-                    event.preventDefault();
-                    if (errorMessage) {
-                        errorMessage.textContent =
-                            "Por favor llena todos los campos antes de enviar el formulario";
-                        errorMessage.classList.remove("hidden");
+                            // Prepare data for submission
+                            const formData = {
+                                name: name,
+                                email: email,
+                                phone: phone
+                            };
+
+                            try {
+                                // Send data to endpoint
+                                const response = await fetch('....', {
+                                    method: 'POST',
+                                    headers: {
+                                        'Content-Type': 'application/json',
+                                        'x-api-key': '....'
+                                    },
+                                    body: JSON.stringify(formData)
+                                });
+
+                                if (!response.ok) {
+                                    throw new Error('Network response was not ok.');
+                                }
+
+                                const result = await response.json();
+                                alert('Form submitted successfully!');
+                                form.reset();
+                            } catch (error) {
+                                console.error('There was a problem with the fetch operation:', error);
+                                alert('Error submitting form. Please try again.');
+                            }
+                        }
+                    } else {
+                        console.error("One or more input elements were not found.");
                     }
-                } else if (!name) {
-                    event.preventDefault();
-                    if (errorMessage) {
-                        errorMessage.textContent = "Por favor llena tu nombre";
-                        errorMessage.classList.remove("hidden");
-                    }
-                } else if (!email) {
-                    event.preventDefault();
-                    if (errorMessage) {
-                        errorMessage.textContent = "Por favor llena tu email";
-                        errorMessage.classList.remove("hidden");
-                    }
-                } else if (!emailRegex.test(email)) {
-                    event.preventDefault();
-                    if (errorMessage) {
-                        errorMessage.textContent =
-                            "Por favor ingresa un email válido";
-                        errorMessage.classList.remove("hidden");
-                    }
-                } else if (!phone) {
-                    event.preventDefault();
-                    if (errorMessage) {
-                        errorMessage.textContent =
-                            "Por favor llena tu teléfono";
-                        errorMessage.classList.remove("hidden");
-                    }
-                } else if (!phoneRegex.test(phone)) {
-                    event.preventDefault();
-                    if (errorMessage) {
-                        errorMessage.textContent =
-                            "Por favor ingresa un teléfono válido";
-                        errorMessage.classList.remove("hidden");
-                    }
-                } else {
-                    if (errorMessage) {
-                        errorMessage.classList.add("hidden");
-                    }
-                }
-            });
-        }
+                });
+            }
+        });
     </script>
 </form>
