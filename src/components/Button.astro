@@ -2,13 +2,13 @@
 type Props = {
     text: string;
     colorClass?: string;
+    class?: string;
 };
 
-const { text, colorClass = "bg-vividGreen" } = Astro.props;
-
+const { text, colorClass = "bg-vividGreen", class: className = "" } = Astro.props;
 ---
 
 <button
-    class={`${colorClass} hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full uppercase`}>
+    class:list={[`${colorClass} hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full uppercase`, className]}>
     {text}
 </button>

@@ -109,16 +109,45 @@ import featureSectionThree from "../../public/assets/featureSectionThree.jpg";
 
 <!-- Form js -->
 <script>
-  // Show the registration form when the button is clicked and hide the button
+  // Get all necessary elements
   const showFormButton = document.getElementById("showFormButton");
   const registrationForm = document.getElementById("registrationForm");
+  const scrollTriggerButtons = document.querySelectorAll(".scroll-trigger");
 
-  if (showFormButton && registrationForm) {
-    showFormButton.addEventListener("click", function () {
-      // Hide the button
+  // Function to show form
+  const showForm = () => {
+    if (showFormButton && registrationForm) {
       showFormButton.classList.add("hidden");
-      // Show the registration form
       registrationForm.classList.remove("hidden");
-    });
+    }
+  };
+
+  // Add click handler for main button
+  if (showFormButton && registrationForm) {
+    showFormButton.addEventListener("click", showForm);
   }
+
+  // Add click handlers for all "Regístrate ahora" buttons
+  scrollTriggerButtons.forEach((button) => {
+    button.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      // Show the form first
+      showForm();
+
+      // Add null check for registrationForm
+      if (!registrationForm) return;
+
+      // Calculate position to center the form in viewport
+      const formRect = registrationForm.getBoundingClientRect();
+      const absoluteFormTop = window.pageYOffset + formRect.top;
+      const offset = absoluteFormTop - (window.innerHeight - formRect.height);
+
+      // Scroll to the calculated position
+      window.scrollTo({
+        top: offset,
+        behavior: "smooth",
+      });
+    });
+  });
 </script>
