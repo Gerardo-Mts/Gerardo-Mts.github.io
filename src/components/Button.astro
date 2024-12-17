@@ -1,6 +1,4 @@
 ---
-import { Icon } from "astro-icon";
-
 type Props = {
   text: string;
   colorClass?: string;
@@ -15,7 +13,7 @@ const {
   colorClass = "bg-vividGreen",
   class: className = "",
   href,
-  icon: Icon,
+  icon: IconComponent,
   id,
 } = Astro.props;
 
@@ -26,12 +24,12 @@ const baseClasses = `${colorClass} hover:bg-green-700 text-white font-bold py-2 
   href ? (
     <a href={href} class={baseClasses} id={id}>
       {text}
-      {Icon && <Icon client:load />}
+      {IconComponent && <IconComponent />}
     </a>
   ) : (
     <button id={id} class={baseClasses}>
       {text}
-      {Icon && <Icon client:load />}
+      {IconComponent && <IconComponent />}
     </button>
   )
 }
