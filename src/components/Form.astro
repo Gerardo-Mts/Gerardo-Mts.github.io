@@ -3,137 +3,145 @@ import Button from "./Button.astro";
 ---
 
 <form
-    class="space-y-4 bg-transparent p-6 rounded-lg shadow-lg max-w-md mx-auto"
+  class="space-y-4 bg-transparent p-6 rounded-lg shadow-lg max-w-md mx-auto"
 >
-    <!-- Error Message -->
-    <p id="error-message" class="text-yellow-300 mt-4 hidden text-center">
-        Error message
-    </p>
+  <!-- Error Message -->
+  <p id="error-message" class="text-yellow-300 mt-4 hidden text-center">
+    Error message
+  </p>
 
-    <!-- Name Field -->
-    <div
-        id="nameElement"
-        class="flex items-center bg-white rounded-full py-2 px-4"
-    >
-        <span class="text-gray-500 pr-3">📛</span>
-        <input
-            class="appearance-none bg-transparent border-none w-full text-gray-700 py-2 px-4 rounded-full focus:outline-none"
-            type="text"
-            placeholder="Tu nombre"
-            aria-label="Tu nombre"
-            id="name"
-        />
-    </div>
+  <!-- Name Field -->
+  <div
+    id="nameElement"
+    class="flex items-center bg-white rounded-full py-2 px-4"
+  >
+    <span class="text-gray-500 pr-3">📛</span>
+    <input
+      class="appearance-none bg-transparent border-none w-full text-gray-700 py-2 px-4 rounded-full focus:outline-none"
+      type="text"
+      placeholder="Tu nombre"
+      aria-label="Tu nombre"
+      id="name"
+    />
+  </div>
 
-    <!-- Email Field -->
-    <div
-        id="emailElement"
-        class="flex items-center bg-white rounded-full py-2 px-4"
-    >
-        <span class="text-gray-500 pr-3">✉️</span>
-        <input
-            class="appearance-none bg-transparent border-none w-full text-gray-700 py-2 px-4 rounded-full focus:outline-none"
-            type="email"
-            placeholder="Tu Email"
-            aria-label="Tu Email"
-            title="Por favor ingresa un email válido"
-            id="email"
-        />
-    </div>
+  <!-- Email Field -->
+  <div
+    id="emailElement"
+    class="flex items-center bg-white rounded-full py-2 px-4"
+  >
+    <span class="text-gray-500 pr-3">✉️</span>
+    <input
+      class="appearance-none bg-transparent border-none w-full text-gray-700 py-2 px-4 rounded-full focus:outline-none"
+      type="email"
+      placeholder="Tu Email"
+      aria-label="Tu Email"
+      title="Por favor ingresa un email válido"
+      id="email"
+    />
+  </div>
 
-    <!-- Phone Field -->
-    <div
-        id="phoneElement"
-        class="flex items-center bg-white rounded-full py-2 px-4"
-    >
-        <span class="text-gray-500 pr-3">📞</span>
-        <input
-            class="appearance-none bg-transparent border-none w-full text-gray-700 py-2 px-4 rounded-full focus:outline-none"
-            type="tel"
-            placeholder="Tu teléfono"
-            aria-label="Tu teléfono"
-            title="Por favor ingresa un teléfono válido"
-            id="phone"
-        />
-    </div>
+  <!-- Phone Field -->
+  <div
+    id="phoneElement"
+    class="flex items-center bg-white rounded-full py-2 px-4"
+  >
+    <span class="text-gray-500 pr-3">📞</span>
+    <input
+      class="appearance-none bg-transparent border-none w-full text-gray-700 py-2 px-4 rounded-full focus:outline-none"
+      type="tel"
+      placeholder="Tu teléfono con código de área"
+      aria-label="Tu teléfono con código de área"
+      title="Por favor ingresa un teléfono válido"
+      id="phone"
+    />
+  </div>
 
-    <!-- Submit Button -->
-    <div class="flex justify-center mt-10">
-        <Button text="Reservar cupo" colorClass="bg-vividGreen px-6" />
-    </div>
+  <!-- Submit Button -->
+  <div class="flex justify-center mt-10">
+    <Button
+      id="submitBtn"
+      text="Reservar cupo"
+      colorClass="bg-vividGreen px-6"
+    />
+  </div>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const form = document.querySelector("form");
-            const errorMessage = document.getElementById("error-message");
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const errorMessage = document.getElementById("error-message");
+      const submitBtn = document.getElementById("submitBtn");
 
-            if (form) {
-                form.addEventListener("submit", async function (event) {
-                    event.preventDefault(); // Prevent the form from submitting the traditional way
+      submitBtn?.addEventListener("click", async function (e) {
+        e.preventDefault();
 
-                    const nameInput = document.getElementById("name") as HTMLInputElement | null;
-                    const emailInput = document.getElementById("email") as HTMLInputElement | null;
-                    const phoneInput = document.getElementById("phone") as HTMLInputElement | null;
+        const nameInput = document.getElementById("name") as HTMLInputElement;
+        const emailInput = document.getElementById("email") as HTMLInputElement;
+        const phoneInput = document.getElementById("phone") as HTMLInputElement;
 
-                    if (nameInput && emailInput && phoneInput) {
-                        const name = nameInput.value.trim();
-                        const email = emailInput.value.trim();
-                        const phone = phoneInput.value.trim();
-                        
-                        // Phone and email regex
-                        const phoneRegex = /^[\+]?[(]?([0-9]{2}|[0-9]{3})[)]?[-\s\.]?([0-9]{2}[-\s\.]?){2,4}[0-9]{2}$/;
-                        const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,}$/;
+        if (nameInput && emailInput && phoneInput) {
+          const name = nameInput.value.trim();
+          const email = emailInput.value.trim();
+          const phone = phoneInput.value.trim();
 
-                        if (!name || !email || !phone || !emailRegex.test(email) || !phoneRegex.test(phone)) {
-                            let errorText = "";
-                            if (!name) errorText = "Por favor llena tu nombre";
-                            else if (!email) errorText = "Por favor llena tu email";
-                            else if (!emailRegex.test(email)) errorText = "Por favor ingresa un email válido";
-                            else if (!phone) errorText = "Por favor llena tu teléfono";
-                            else if (!phoneRegex.test(phone)) errorText = "Por favor ingresa un teléfono válido";
-                            
-                            if (errorMessage) {
-                                errorMessage.textContent = errorText;
-                                errorMessage.classList.remove("hidden");
-                            }
-                        } else {
-                            if (errorMessage) errorMessage.classList.add("hidden");
+          const phoneRegex =
+            /^[\+]?[(]?([0-9]{2}|[0-9]{3})[)]?[-\s\.]?([0-9]{2}[-\s\.]?){2,4}[0-9]{2}$/;
+          const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,}$/;
 
-                            // Prepare data for submission
-                            const formData = {
-                                name: name,
-                                email: email,
-                                phone: phone
-                            };
+          if (
+            !name ||
+            !email ||
+            !phone ||
+            !emailRegex.test(email) ||
+            !phoneRegex.test(phone)
+          ) {
+            let errorText = "";
+            if (!name) errorText = "Por favor llena tu nombre";
+            else if (!email) errorText = "Por favor llena tu email";
+            else if (!emailRegex.test(email))
+              errorText = "Por favor ingresa un email válido";
+            else if (!phone) errorText = "Por favor llena tu teléfono";
+            else if (!phoneRegex.test(phone))
+              errorText = "Por favor ingresa un teléfono válido";
 
-                            try {
-                                // Send data to endpoint
-                                const response = await fetch('....', {
-                                    method: 'POST',
-                                    headers: {
-                                        'Content-Type': 'application/json',
-                                        'x-api-key': '....'
-                                    },
-                                    body: JSON.stringify(formData)
-                                });
-
-                                if (!response.ok) {
-                                    throw new Error('Network response was not ok.');
-                                }
-
-                                const result = await response.json();
-                                alert('Form submitted successfully!');
-                                form.reset();
-                            } catch (error) {
-                                console.error('There was a problem with the fetch operation:', error);
-                                alert('Error submitting form. Please try again.');
-                            }
-                        }
-                    } else {
-                        console.error("One or more input elements were not found.");
-                    }
-                });
+            if (errorMessage) {
+              errorMessage.textContent = errorText;
+              errorMessage.classList.remove("hidden");
             }
-        });
-    </script>
+            return;
+          }
+
+          if (errorMessage) errorMessage.classList.add("hidden");
+
+          try {
+            const response = await fetch("....", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                "x-api-key": "....",
+              },
+              body: JSON.stringify({
+                name,
+                email,
+                phone,
+              }),
+            });
+
+            window.location.href = "/sucess";
+            // if (response.ok) {
+            //     window.location.href = '/sucess';
+            // } else {
+            //     throw new Error('Network response was not ok');
+            // }
+          } catch (error) {
+            console.error("Error:", error);
+            if (errorMessage) {
+              errorMessage.textContent =
+                "Error al enviar el formulario. Por favor intenta de nuevo.";
+              errorMessage.classList.remove("hidden");
+            }
+          }
+        }
+      });
+    });
+  </script>
 </form>
