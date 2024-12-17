@@ -1,14 +1,37 @@
 ---
+import { Icon } from "astro-icon";
+
 type Props = {
-    text: string;
-    colorClass?: string;
-    class?: string;
+  text: string;
+  colorClass?: string;
+  class?: string;
+  href?: string;
+  icon?: any;
+  id?: string;
 };
 
-const { text, colorClass = "bg-vividGreen", class: className = "" } = Astro.props;
+const {
+  text,
+  colorClass = "bg-vividGreen",
+  class: className = "",
+  href,
+  icon: Icon,
+  id,
+} = Astro.props;
+
+const baseClasses = `${colorClass} hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full uppercase ${className} inline-flex items-center gap-2`;
 ---
 
-<button
-    class:list={[`${colorClass} hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full uppercase`, className]}>
-    {text}
-</button>
+{
+  href ? (
+    <a href={href} class={baseClasses} id={id}>
+      {text}
+      {Icon && <Icon client:load />}
+    </a>
+  ) : (
+    <button id={id} class={baseClasses}>
+      {text}
+      {Icon && <Icon client:load />}
+    </button>
+  )
+}
