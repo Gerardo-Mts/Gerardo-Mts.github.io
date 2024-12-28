@@ -113,25 +113,24 @@ import Button from "./Button.astro";
           if (errorMessage) errorMessage.classList.add("hidden");
 
           try {
-            const response = await fetch("....", {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-                "x-api-key": "....",
-              },
-              body: JSON.stringify({
-                name,
-                email,
-                phone,
-              }),
-            });
+            // Given the strict rate limiting and single endpoint, exposing the API key poses minimal risk in this specific case
+            const response = await fetch(
+              "https://geng1xtw1f.execute-api.us-east-1.amazonaws.com/prod/form-submit",
+              {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                  "x-api-key": "V5lOFTCuW7ayJlWwHAbTT3c859nlasQk2eyGlikN",
+                },
+                body: JSON.stringify({
+                  name,
+                  email,
+                  phone,
+                }),
+              }
+            );
 
             window.location.href = "/sucess";
-            // if (response.ok) {
-            //     window.location.href = '/sucess';
-            // } else {
-            //     throw new Error('Network response was not ok');
-            // }
           } catch (error) {
             console.error("Error:", error);
             if (errorMessage) {
