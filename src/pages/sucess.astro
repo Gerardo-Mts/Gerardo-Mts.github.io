@@ -2,14 +2,15 @@
 import Layout from "../layouts/Layout.astro";
 import Main from "../components/Main.astro";
 import H1 from "../components/H1.astro";
+import H2 from "../components/H2.astro";
 import YouTubeVideo from "../components/YouTubeVideo.astro";
 import Button from "../components/Button.astro";
 import { FaWhatsapp } from "react-icons/fa";
 ---
 
-<Layout title="Registro Exitoso">
+<Layout title="Registro Confirmado!">
   <Main>
-    <H1 text="¡Registro Exitoso!" />
+    <H1 text="¡Registro Confirmado!" />
     <div class="text-white text-center max-w-4xl mx-auto px-4">
       <p class="text-2xl pb-8">Gracias por registrarte</p>
       <div class="mx-auto my-6">
@@ -18,19 +19,33 @@ import { FaWhatsapp } from "react-icons/fa";
           title="Video Title"
           width={800}
           height={450}
-          autoplay={true}
+          autoplay={false}
         />
       </div>
-    </div>
 
-    <div class="text-white text-center max-w-4xl mx-auto px-4">
-      <p class="text-2xl pb-8">Todavia te quedan dudas? Mandame un WhatsApp!</p>
+      <H2 text="Próximos pasos:" />
 
-      <Button
-        href="https://wa.me/5491131234567"
-        text="Conecta con Gerardo"
-        icon={FaWhatsapp}
-      />
+      <div class="py-4">
+        <H2 text="Paso #1" />
+
+        <div class="text-center p-5">
+          <p class="text-xl">
+            Únete al grupo de WhatsApp. Será un medio de contacto exclusivo
+            entre tú y yo, donde vas a recibir todos los detalles de la
+            Masterclass.
+          </p>
+        </div>
+        <p class="text-lg">Grupo libre de SPAM.</p>
+      </div>
+
+      <div class="p-3">
+        <Button
+          href="https://chat.whatsapp.com/JaBaqLZIkQoGMccdj6wDQW"
+          text="Unirme al grupo de WhatsApp"
+          icon={FaWhatsapp}
+        />
+      </div>
+
     </div>
   </Main>
 </Layout>

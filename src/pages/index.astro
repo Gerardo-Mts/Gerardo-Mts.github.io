@@ -10,23 +10,22 @@ import YouTubeVideo from "../components/YouTubeVideo.astro";
 
 // import the Image component from Astro and the main landing page image
 import { Image } from "astro:assets";
-import mainLandingPage from "../../public/assets/mainLandingPage.jpeg";
+import mainLandingPage from "../../public/assets/mainLandingPage.webp";
 
 // Feature Section Image Imports
-import featureSectionOne from "../../public/assets/featureSectionOne.jpg";
-import featureSectionTwo from "../../public/assets/featureSectionTwo.jpg";
-import featureSectionThree from "../../public/assets/featureSectionThree.jpg";
+import featureSectionOne from "../../public/assets/featureSectionOne.webp";
+import featureSectionTwo from "../../public/assets/featureSectionTwo.webp";
+import featureSectionThree from "../../public/assets/featureSectionThree.webp";
 ---
 
 <Layout title="Gerardo Miramontes">
   <Main>
     <!-- H1 : Es el titulo de la pagina, cambialo para actualizarlo -->
-    <H1 text="Diálogo con Gerardo Miramontes" />
+    <H1 text="Reto 2025 Sobrevive al futuro digital" />
 
     <!-- Subtitulo de la pagina -->
     <p class="text-white text-center text-2xl p-3">
-      Una plática profunda y limitada a 40 humanos interesados en empujarse a
-      ser su mejor puta versión
+      Jueves 23 de Enero del 2025 8:00 pm hora CDMX
     </p>
 
     <!-- Imagen de bienvenida -->
@@ -41,7 +40,11 @@ import featureSectionThree from "../../public/assets/featureSectionThree.jpg";
     <!-- Boton de registro -->
     <div id="showFormButton" class="flex justify-center mt-10">
       <!-- Cambiar texto del boton de registro aqui abajo -->
-      <Button text="Registar inmediatamente" />
+      <Button
+        text="Registar inmediatamente"
+        colorClass="bg-custom-orange"
+        hoverColor="bg-custom-orange"
+      />
     </div>
 
     <div id="registrationForm" class="hidden">
@@ -51,59 +54,75 @@ import featureSectionThree from "../../public/assets/featureSectionThree.jpg";
     <!-- Seccion de caracteristicas -->
     <!-- Features section -->
     <FeatureSection
-      heading="¿Qué vas a aprender?"
+      heading="¿Qué es esto?"
       imageSrc={featureSectionOne}
       imageDescription="Gerardo Miramontes Main Landing Page Image"
       htmlContent={`
 				<p>
-					En este diálogo, Gerardo Miramontes compartirá contigo
-					los secretos detrás de su éxito y cómo puedes aplicarlos
-					en tu vida para alcanzar tus metas y sueños.
-				</p>
-				<br>
-				<p>
-					Además, tendrás la oportunidad de hacerle preguntas y
-					recibir respuestas directas de él.
+          Una clase GARTIS en línea para esos emprendedores, negocios, marcas personales, 
+          coaches y creadores de contenido que están ESTANCADOS en redes sociales, en sus 
+          VENTAS y tienen el gran problema de que en este Nuevo Mundo Digital las tendencias 
+          van más rápido de lo que puedes adaptarte.
 				</p>
 			`}
       buttonText="Regístrate ahora"
     />
 
     <FeatureSection
-      heading="¿Por qué deberías asistir?"
+      heading="¿Qué vas a aprender en el entrenamiento y cuál es esa Metodología?"
       imageSrc={featureSectionTwo}
       imageDescription="Gerardo Miramontes Main Landing Page Image"
       htmlContent={`
 				<ul class="list-disc pl-5 pt-3 space-y-2">
 					<li>
-						Si estás buscando inspiración, motivación y consejos prácticos para alcanzar tus metas y sueños, este diálogo es para ti.
+						⁠Aprenderás los 4 pilares de Instagram que para crear una marca personal exitosa.
 					</li>
 					<li>
-						No pierdas la oportunidad de aprender de uno de los mejores y más exitosos emprendedores de la actualidad.
+						También aprenderás cómo hacer un embudo sencillo para transformar a tus seguidores 
+            en clientes potenciales.
 					</li>
 					<li>
-						Aprovecha esta oportunidad única para transformar tu vida y alcanzar el éxito que siempre has deseado.
+            Conocerás los errores comunes que matan tus ventas y engagement en redes sociales 
+            (y cómo evitarlos).
 					</li>
+          <br>
+          <p>
+          En este entrenamiento de 1 hora aprenderás de la mano de Gerardo Miramontes y Chuy cómo 
+          sobrevivir y permanecer vigente con tu negocio y marca personal en este nuevo FUTURO DIGITAL 
+          que cambia constante y bruscamente en tendencias, gustos y modelos de negocio. 
+          </p>
+          <br>
+          <p>
+          Esto lo haremos a través de la metodología probada de Gerardo Miramontes que durante 5 años le 
+          ha permitido crear una comunidad de 183,000 seguidores sumando todas sus redes sociales.
+          </p>
 				</ul>
 			`}
       buttonText="Regístrate ahora"
     />
 
     <FeatureSection
-      heading="¿Qué vas a aprender?"
+      heading="¿Quienes somos?"
       imageSrc={featureSectionThree}
       imageDescription="Gerardo Miramontes Main Landing Page Image"
       htmlContent={`
 				<p>
-					En este diálogo, Gerardo Miramontes compartirá contigo
-					los secretos detrás de su éxito y cómo puedes aplicarlos
-					en tu vida para alcanzar tus metas y sueños.
+          Dos experimentados creadores de contenido en marketing emocional y ventas con 5 años de experiencia en el campo. 
 				</p>
 				<br>
 				<p>
-					Además, tendrás la oportunidad de hacerle preguntas y
-					recibir respuestas directas de él.
+          Gerardo ha sido 2 veces invitado a las reuniones de creadores de contenido de TikTok, como también ha sido TEDx speaker. 🎤
 				</p>
+        <br>
+        <p>
+          Ha ayudado a marcas como Deco Expres a cerrar negocios con Santa Clara (una marca  de Coca-Cola), Carl’s Jr. 
+          Farmacias Similares, Chivas F.C y más marcas importantes. 
+        </p>
+        <br>
+        <p>
+          Como así mismo ha tenido por 5 años una Marca Personal Fructífera en el mundo del desarrollo personal, brindándole así la 
+          experiencia y el conocimiento del campo emocional y cómo este influye en las decisiones de compra y el marketing.
+        </p>
 			`}
       buttonText="Regístrate ahora"
     />
