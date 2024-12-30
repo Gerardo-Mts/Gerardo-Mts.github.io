@@ -37,7 +37,12 @@ const {
             <H2 text={heading} />
             <div class="my-6 text-lg text-white" set:html={htmlContent} />
             <div class="mt-6 pt-4 flex justify-center">
-                <Button text={buttonText} class="scroll-trigger" />
+                <Button 
+                    text={buttonText} 
+                    class="scroll-trigger"
+                    colorClass="bg-custom-orange"
+                    hoverColor="bg-custom-orange-hover" 
+                />
             </div>
         </div>
     </div>

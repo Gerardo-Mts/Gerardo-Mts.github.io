@@ -2,6 +2,7 @@
 type Props = {
   text: string;
   colorClass?: string;
+  hoverColor?: string;
   class?: string;
   href?: string;
   icon?: any;
@@ -11,13 +12,14 @@ type Props = {
 const {
   text,
   colorClass = "bg-vividGreen",
+  hoverColor = "bg-green-700",
   class: className = "",
   href,
   icon: IconComponent,
   id,
 } = Astro.props;
 
-const baseClasses = `${colorClass} hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full uppercase ${className} inline-flex items-center gap-2`;
+const baseClasses = `${colorClass} hover:${hoverColor} text-white font-bold py-2 px-4 rounded-full uppercase ${className} inline-flex items-center gap-2`;
 ---
 
 {
