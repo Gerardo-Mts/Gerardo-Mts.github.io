@@ -29,35 +29,38 @@ import featureSectionThree from "../../public/assets/featureSectionThree.webp";
     </p>
 
     <!-- Imagen de bienvenida -->
-    <div class="flex justify-center mt-10 mx-2 sm:mx-11">
-      <Image
-        class="w-full sm:w-4/5 md:w-7/12 lg:w-7/12 xl:w-7/12 h-auto object-contain sm:mx-11 aspect-w-4 aspect-h-3 rounded-lg"
-        src={mainLandingPage}
-        alt="Gerardo Miramontes Main Landing Page Image"
-      />
+    <div class="text-white text-center max-w-4xl mx-auto px-4">
+      <div class="mx-auto my-6">
+        <YouTubeVideo
+          id="lhi1UQJwV6Y"
+          title="Video Title"
+          width={800}
+          height={450}
+          autoplay={true}
+        />
+      </div>
     </div>
+      <!-- Boton de registro -->
+      <div id="showFormButton" class="flex justify-center mt-10">
+        <!-- Cambiar texto del boton de registro aqui abajo -->
+        <Button
+          text="Registar inmediatamente"
+          colorClass="bg-custom-orange"
+          hoverColor="bg-custom-orange"
+        />
+      </div>
 
-    <!-- Boton de registro -->
-    <div id="showFormButton" class="flex justify-center mt-10">
-      <!-- Cambiar texto del boton de registro aqui abajo -->
-      <Button
-        text="Registar inmediatamente"
-        colorClass="bg-custom-orange"
-        hoverColor="bg-custom-orange"
-      />
-    </div>
+      <div id="registrationForm" class="hidden">
+        <Form />
+      </div>
 
-    <div id="registrationForm" class="hidden">
-      <Form />
-    </div>
-
-    <!-- Seccion de caracteristicas -->
-    <!-- Features section -->
-    <FeatureSection
-      heading="¿Qué es esto?"
-      imageSrc={featureSectionOne}
-      imageDescription="Gerardo Miramontes Main Landing Page Image"
-      htmlContent={`
+      <!-- Seccion de caracteristicas -->
+      <!-- Features section -->
+      <FeatureSection
+        heading="¿Qué es esto?"
+        imageSrc={featureSectionOne}
+        imageDescription="Gerardo Miramontes Main Landing Page Image"
+        htmlContent={`
 				<p>
           Una clase <b>GRATIS</b> en línea para esos <b>emprendedores, negocios, marcas personales, 
           coaches</b> y <b>creadores de contenido</b> que están <b>ESTANCADOS</b> en redes sociales, en sus 
@@ -65,14 +68,14 @@ import featureSectionThree from "../../public/assets/featureSectionThree.webp";
           van más rápido de lo que <b>puedes adaptarte</b>.
 				</p>
 			`}
-      buttonText="Regístrate ahora"
-    />
+        buttonText="Regístrate ahora"
+      />
 
-    <FeatureSection
-      heading="¿Qué vas a aprender en el entrenamiento y cuál es esa Metodología?"
-      imageSrc={featureSectionTwo}
-      imageDescription="Gerardo Miramontes Main Landing Page Image"
-      htmlContent={`
+      <FeatureSection
+        heading="¿Qué vas a aprender en el entrenamiento y cuál es esa Metodología?"
+        imageSrc={featureSectionTwo}
+        imageDescription="Gerardo Miramontes Main Landing Page Image"
+        htmlContent={`
 				<ul class="list-disc pl-5 pt-3 space-y-2">
 					<li>
 						⁠Aprenderás los 4 pilares de Instagram que para crear una marca personal exitosa.
@@ -98,14 +101,14 @@ import featureSectionThree from "../../public/assets/featureSectionThree.webp";
           </p>
 				</ul>
 			`}
-      buttonText="Regístrate ahora"
-    />
+        buttonText="Regístrate ahora"
+      />
 
-    <FeatureSection
-      heading="¿Quienes somos?"
-      imageSrc={featureSectionThree}
-      imageDescription="Gerardo Miramontes Main Landing Page Image"
-      htmlContent={`
+      <FeatureSection
+        heading="¿Quienes somos?"
+        imageSrc={featureSectionThree}
+        imageDescription="Gerardo Miramontes Main Landing Page Image"
+        htmlContent={`
 				<p>
           Dos experimentados creadores de contenido en marketing emocional y ventas con 5 años de experiencia en el campo. 
 				</p>
@@ -124,85 +127,90 @@ import featureSectionThree from "../../public/assets/featureSectionThree.webp";
           experiencia y el conocimiento del <b>campo emocional</b> y cómo este influye en las <b>decisiones de compra</b> y el <b>marketing</b>.
         </p>
 			`}
-      buttonText="Regístrate ahora"
-    />
-
-    <!-- Seccion de testimonios con videos -->
-
-    <div class="text-white text-center max-w-4xl mx-auto px-4">
-      <!-- H2 : Es el titulo de la seccion superior de testimonios, cambialo para actualizarlo -->
-      <H2
-        text="Grandes marcas, grandes historias. Testimonios y resultados de los que han trabajado conmigo:"
+        buttonText="Regístrate ahora"
       />
-      <div class="mx-auto my-6">
-        <!-- Video de testimonio 1 -->
-        <YouTubeVideo
-          id="sbbiaPx_I5g"
-          title="Video Title"
-          width={800}
-          height={450}
-          autoplay={false}
+
+      <!-- Seccion de testimonios con videos -->
+
+      <div class="text-white text-center max-w-4xl mx-auto px-4">
+        <!-- H2 : Es el titulo de la seccion superior de testimonios, cambialo para actualizarlo -->
+        <H2
+          text="Grandes marcas, grandes historias. Testimonios y resultados de los que han trabajado conmigo:"
         />
+        <div class="mx-auto my-6">
+          <!-- Video de testimonio 1 -->
+          <YouTubeVideo
+            id="sbbiaPx_I5g"
+            title="Video Title"
+            width={800}
+            height={450}
+            autoplay={false}
+          />
+        </div>
+
+        <!-- <div class="mx-auto my-6"> -->
+        <!-- Video de testimonio 2 -->
+        <!-- <YouTubeVideo -->
+        <!-- id="iVofKCfnIPU" -->
+        <!-- title="Video Title" -->
+        <!-- width={800} -->
+        <!-- height={450} -->
+        <!-- autoplay={false} -->
+        <!-- /> -->
+        <!-- </div> -->
+
+        <!-- Es el titulo de la seccion inferior de testimonios, cambialo para actualizarlo  -->
+        <p class="text-2xl">
+          ¿Qué esperas para ser parte de esta experiencia y que tu marca y
+          negocio no pierdan vigencia este 2025 y los años que vienen?
+          ¡REGÍSTRATE YA!"
+        </p>
       </div>
-
-      <!-- <div class="mx-auto my-6"> -->
-      <!-- Video de testimonio 2 -->
-      <!-- <YouTubeVideo -->
-      <!-- id="iVofKCfnIPU" -->
-      <!-- title="Video Title" -->
-      <!-- width={800} -->
-      <!-- height={450} -->
-      <!-- autoplay={false} -->
-      <!-- /> -->
-      <!-- </div> -->
-
-      <!-- Es el titulo de la seccion inferior de testimonios, cambialo para actualizarlo  -->
-      <p class="text-2xl">¿Qué esperas para ser parte de esta experiencia y que tu marca y negocio no pierdan vigencia este 2025 y los años que vienen? ¡REGÍSTRATE YA!"</p>
     </div>
   </Main>
-</Layout>
 
-<!-- Form js -->
-<script>
-  // Get all necessary elements
-  const showFormButton = document.getElementById("showFormButton");
-  const registrationForm = document.getElementById("registrationForm");
-  const scrollTriggerButtons = document.querySelectorAll(".scroll-trigger");
+  <!-- Form js -->
+  <script>
+    // Get all necessary elements
+    const showFormButton = document.getElementById("showFormButton");
+    const registrationForm = document.getElementById("registrationForm");
+    const scrollTriggerButtons = document.querySelectorAll(".scroll-trigger");
 
-  // Function to show form
-  const showForm = () => {
+    // Function to show form
+    const showForm = () => {
+      if (showFormButton && registrationForm) {
+        showFormButton.classList.add("hidden");
+        registrationForm.classList.remove("hidden");
+      }
+    };
+
+    // Add click handler for main button
     if (showFormButton && registrationForm) {
-      showFormButton.classList.add("hidden");
-      registrationForm.classList.remove("hidden");
+      showFormButton.addEventListener("click", showForm);
     }
-  };
 
-  // Add click handler for main button
-  if (showFormButton && registrationForm) {
-    showFormButton.addEventListener("click", showForm);
-  }
+    // Add click handlers for all "Regístrate ahora" buttons
+    scrollTriggerButtons.forEach((button) => {
+      button.addEventListener("click", (e) => {
+        e.preventDefault();
 
-  // Add click handlers for all "Regístrate ahora" buttons
-  scrollTriggerButtons.forEach((button) => {
-    button.addEventListener("click", (e) => {
-      e.preventDefault();
+        // Show the form first
+        showForm();
 
-      // Show the form first
-      showForm();
+        // Add null check for registrationForm
+        if (!registrationForm) return;
 
-      // Add null check for registrationForm
-      if (!registrationForm) return;
+        // Calculate position to center the form in viewport
+        const formRect = registrationForm.getBoundingClientRect();
+        const absoluteFormTop = window.pageYOffset + formRect.top;
+        const offset = absoluteFormTop - (window.innerHeight - formRect.height);
 
-      // Calculate position to center the form in viewport
-      const formRect = registrationForm.getBoundingClientRect();
-      const absoluteFormTop = window.pageYOffset + formRect.top;
-      const offset = absoluteFormTop - (window.innerHeight - formRect.height);
-
-      // Scroll to the calculated position
-      window.scrollTo({
-        top: offset,
-        behavior: "smooth",
+        // Scroll to the calculated position
+        window.scrollTo({
+          top: offset,
+          behavior: "smooth",
+        });
       });
     });
-  });
-</script>
+  </script>
+</Layout>
