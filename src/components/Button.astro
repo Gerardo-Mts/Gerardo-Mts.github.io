@@ -3,35 +3,56 @@ type Props = {
   text: string;
   colorClass?: string;
   hoverColor?: string;
+  textColor?: string;
   class?: string;
   href?: string;
   icon?: any;
   id?: string;
+  borderColor?: string;
+  bgColor?: string;
 };
 
 const {
   text,
   colorClass = "bg-vividGreen",
-  hoverColor = "bg-green-700",
+  hoverColor = "hover:bg-green-700",
+  textColor = "text-white",
   class: className = "",
   href,
   icon: IconComponent,
   id,
+  borderColor,
+  bgColor,
 } = Astro.props;
 
-const baseClasses = `${colorClass} hover:${hoverColor} text-white font-bold py-2 px-4 rounded-full uppercase ${className} inline-flex items-center gap-2`;
+const baseClasses = `font-bold py-2 px-4 rounded-full uppercase ${className} inline-flex items-center gap-2 transition-all duration-200 ease-in-out`;
+
+const outerBorderClasses = borderColor
+  ? `border-2 ${borderColor} p-[2px] inline-block rounded-full`
+  : "";
+
+const innerButtonClasses = `
+  ${bgColor ? bgColor : colorClass} 
+  ${hoverColor} 
+  ${textColor} 
+  ${baseClasses}
+`;
 ---
 
 {
   href ? (
-    <a href={href} class={baseClasses} id={id}>
-      {text}
-      {IconComponent && <IconComponent />}
+    <a href={href} class={outerBorderClasses} id={id}>
+      <span class={innerButtonClasses}>
+        {text}
+        {IconComponent && <IconComponent />}
+      </span>
     </a>
   ) : (
-    <button id={id} class={baseClasses}>
-      {text}
-      {IconComponent && <IconComponent />}
-    </button>
+    <div class={outerBorderClasses}>
+      <button id={id} class={innerButtonClasses}>
+        {text}
+        {IconComponent && <IconComponent />}
+      </button>
+    </div>
   )
 }
