@@ -1,13 +1,14 @@
 ---
 type Props = {
     text: string;
+    textColor?: string;
 };
 
-const { text } = Astro.props;
+const { text, textColor = "text-white" } = Astro.props;
 ---
 
 <h1
-    class="text-4xl text-white font-next-art font-bold mb-3 text-center uppercase"
+    class=`text-4xl ${textColor} font-next-art font-bold mb-3 text-center uppercase`
     style="text-shadow: 0.5px 0.5px 0.5px rgba(188, 188, 188, 0.801);"
 >
     {text}
