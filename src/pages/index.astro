@@ -16,16 +16,24 @@ import mainLandingPage from "../../public/assets/mainLandingPage.webp";
 import featureSectionOne from "../../public/assets/featureSectionOne.webp";
 import featureSectionTwo from "../../public/assets/featureSectionTwo.webp";
 import featureSectionThree from "../../public/assets/featureSectionThree.webp";
+import projectLogo from "../../public/assets/projectLogo.webp";
 ---
 
 <Layout title="Gerardo Miramontes">
   <Main>
     <!-- H1 : Es el titulo de la pagina, cambialo para actualizarlo -->
-    <H1 text="Reto 2025 Sobrevive al futuro digital" />
+    <h1
+      class=`text-4xl text-white font-next-art font-bold mb-3 text-center uppercase`
+      style="text-shadow: 0.5px 0.5px 0.5px rgba(188, 188, 188, 0.801);"
+    >
+      TALLER VIVENCIAL: <strong class="text-red-love"
+        >LAS 5 HERIDAS DEL ALMA QUE ARRUINAN TUS RELACIONES</strong
+      >
+    </h1>
 
     <!-- Subtitulo de la pagina -->
     <p class="text-white text-center text-2xl p-3">
-      Jueves 23 de Enero del 2025 7:00 pm hora CDMX
+      Viernes 12 y Sábado 13 de Diciembre 2025 📍CD<b>MX</b>
     </p>
 
     <!-- Imagen de bienvenida -->
@@ -51,12 +59,20 @@ import featureSectionThree from "../../public/assets/featureSectionThree.webp";
     </div> -->
 
     <!-- Boton de registro -->
-    <div id="showFormButton" class="flex justify-center mt-10">
+    <!-- id="showFormButton" -->
+    <div class="flex flex-col justify-center items-center mt-10 m-4 space-y-4">
       <!-- Cambiar texto del boton de registro aqui abajo -->
       <Button
-        text="Registar inmediatamente"
+        text="❤️‍🩹Comprar AHORA entrada al taller"
         colorClass="bg-custom-orange"
         hoverColor="bg-custom-orange"
+        href="https://api.whatsapp.com/send?phone=+523333032063"
+      />
+      <Button
+        text="❤️‍🩹Quiero información para experiencia VIP + entrada al taller"
+        colorClass="bg-custom-orange"
+        hoverColor="bg-custom-orange"
+        href="/sucess"
       />
     </div>
 
@@ -67,85 +83,149 @@ import featureSectionThree from "../../public/assets/featureSectionThree.webp";
     <!-- Seccion de caracteristicas -->
     <!-- Features section -->
     <FeatureSection
-      heading="¿Qué es esto?"
+      heading="¿Qué es esto y que incluye tu entrada al taller? 💌"
       imageSrc={featureSectionOne}
       imageDescription="Gerardo Miramontes Main Landing Page Image"
       htmlContent={`
-				<p>
-          Una clase <b>GRATIS</b> en línea para esos <b>emprendedores, negocios, marcas personales, 
-          coaches</b> y <b>creadores de contenido</b> que están <b>ESTANCADOS</b> en redes sociales, en sus 
-          <b>VENTAS</b> y tienen el <b>gran problema</b> de que en este <b>Nuevo Mundo Digital</b> las tendencias 
-          van más rápido de lo que <b>puedes adaptarte</b>.
-				</p>
-			`}
-      buttonText="Regístrate ahora"
+				<p>Un taller íntimo y TRANSFORMADOR donde aprenderás a identificar, sanar y reconectar con el amor real que has deseado por años. 
+        El acceso al taller tiene 2 modalidades:</p>
+        <ol class="list-decimal pl-5 pt-3 space-y-2">
+          <li>
+            ❤️‍🩹 Boleto al Círculo Taller
+          </li>
+          <li>
+            ❤️‍🔥 Boleto VIP al Círculo de la Conexión Eterna (incluye experiencia exclusiva 1 a 1 conmigo  + entrada al taller)
+          </li>
+        </ol>
+        <br>
+        <p><b>❤️‍🩹CÍRCULO TALLER — Acceso General</b></p>
+        <p>Ideal para quienes quieren dar el primer paso en su proceso de sanación y transformación de relaciones.</p>
+        <br>
+        <p>✨ Incluye:</p>
+        <ul class="list-disc pl-5 pt-3 space-y-2">
+          <li>❤️‍🩹 Acceso al taller vivencial “Las 5 heridas del alma que arruinan tus relaciones” viernes 12 de Diciembre 2025</li>
+          <li>📕 Material de trabajo exclusivo para acompañarte paso a paso</li>
+          <li>🎁 BONO ESPECIAL: Descuento único para mi evento anual de planeación de metas y relaciones (3 de enero 2026 – Hotel RIU Guadalajara)</li>
+          <li>🧭 10 semanas de seguimiento exclusivo EN VIVO conmigo</li>
+          <li>🫂 Acceso a comunidad privada de apoyo y transformación</li>
+          <li>📸 Foto conmemorativa conmigo al final del evento de tu inicio en este proceso</li>
+        </ul>
+        <br>
+        <p><b>❤️‍🔥 CÍRCULO DE LA CONEXIÓN ETERNA — VIP</b></p>
+        <p>❤️‍🔥La experiencia EXCLUSIVA para quienes quieren que yo los guíe y acompañe de la mano 1 a 1 personalmente en su proceso.</p>
+        <br>
+        <p>✨ Incluye todo lo anterior mencionado +/p>
+        <br>
+        <ul class="list-disc pl-5 pt-3 space-y-2">
+          <li>🌇 Charla privada (solo para 15 personas) sábado 13 de Diciembre a las 8:00 pm: “No confundas 
+          al amor de tu vida con el amor de tus días” → En un Roof con vista a la Torre Latinoamericana solo para un círculo íntimo y cercano fuera de un 
+          escenario para que me preguntes todo lo que necesitas + dinámicas exclusivas.</li>
+          <li>🥐 Desayuno VIP: trabajo personalizado con técnica de mayéutica, egograma y ejercicios escritos.</li>
+          <li>🎁 Acceso 100% gratuito a mi evento anual en Guadalajara (3 de enero 2026 - Hotel RIU)</li>
+        </ul>
+        <br>
+        <p>👉 En pocas palabras: no solo compras un taller, compras un proceso completo de transformación, con guía, comunidad y seguimiento real para que tu vida y tus relaciones cambien de raíz.</p>
+      `}
     />
 
+    <div class="flex flex-col justify-center items-center mb-4 mx-4 space-y-4">
+      <!-- Cambiar texto del boton de registro aqui abajo -->
+      <Button
+        text="❤️‍🩹Comprar AHORA entrada al taller"
+        colorClass="bg-custom-orange"
+        hoverColor="bg-custom-orange"
+        href="https://api.whatsapp.com/send?phone=+523333032063"
+      />
+      <Button
+        text="❤️‍🩹Quiero información para experiencia VIP + entrada al taller"
+        colorClass="bg-custom-orange"
+        hoverColor="bg-custom-orange"
+        href="/sucess"
+      />
+    </div>
+
     <FeatureSection
-      heading="¿Qué vas a aprender en el entrenamiento y cuál es esa Metodología?"
+      heading="¿Qué vas a APRENDER y SANAR en este taller y cual es mi Metodología? ❤️‍🩹"
       imageSrc={featureSectionTwo}
       imageDescription="Gerardo Miramontes Main Landing Page Image"
       htmlContent={`
-				<ul class="list-disc pl-5 pt-3 space-y-2">
-					<li>
-						⁠Aprenderás los 4 pilares de Instagram que para crear una marca personal exitosa.
-					</li>
-					<li>
-						También aprenderás cómo hacer un embudo sencillo para transformar a tus seguidores 
-            en clientes potenciales.
-					</li>
-					<li>
-            Conocerás los errores comunes que matan tus ventas y engagement en redes sociales 
-            (y cómo evitarlos).
-					</li>
-          <br>
-          <p>
-          En este entrenamiento de <b>1 hora aprenderás</b> de la mano de <b>Gerardo Miramontes</b> y <b>Chuy</b> cómo 
-          <b>sobrevivir</b> y <b>permanecer</b> vigente con tu <b>negocio</b> y <b>marca personal</b> en este nuevo <b>FUTURO DIGITAL</b> 
-          que cambia <b>constante</b> y <b>bruscamente</b> en tendencias, gustos y modelos de negocio. 
-          </p>
-          <br>
-          <p>
-          Esto lo haremos a través de la metodología probada de <b>Gerardo Miramontes</b> que durante 5 años le 
-          ha permitido crear una comunidad de <b>183,000 seguidores</b> sumando todas sus redes sociales.
-          </p>
-				</ul>
+				<p>A través de mi método único de 7 pasos llamada: “De la curva del Quiebre a la Conexión.</p>
+        <br>
+        <p>Vamos a:</p>
+        <ol class="list-decimal pl-5 pt-3 space-y-2">
+          <li>Descubrir el origen de tus heridas.</li>
+          <li>Cortar los patrones que repites una y otra vez.</li>
+          <li>Y reescribir tu narrativa para dejar de relacionarte desde la escasez y abrirte al amor real.</li>
+        </ol>
+        <br>
+        <p>Este taller no es otro discurso romántico de TikTok ni de frases vacías de moda sobre “amor propio”, o  consejos reciclados de todos los que hablan de amor en redes sociales.</p>
+        <br>
+        <p>Es un proceso real, profundo y probado, que ha transformado la manera en que muchas personas se ven y se aman. La mayoría llegó con dudas, y salió con un antes y un después en su forma de amar.</p>
+        <br>
+        <p>💔 ¿Cómo saber si este taller es para ti?</p>
+        <br>
+        <ul class="list-disc pl-5 pt-3 space-y-2">
+          <li>Si vives con miedo a NO ENCONTRAR o perder UNA RELACIÓN. Es para ti ✅</li>
+          <li>Si cargas <b>heridas</b> no sanadas de rupturas o familia. Es para ti ✅</li>
+          <li>Si repites patrones que bloquean la conexión contigo, tu familia, pretendientes o parejas. Es para ti ✅</li>
+        </ul>
 			`}
-      buttonText="Regístrate ahora"
     />
 
+    <div class="flex flex-col justify-center items-center mb-4 mx-4 space-y-4">
+      <!-- Cambiar texto del boton de registro aqui abajo -->
+      <Button
+        text="❤️‍🩹Comprar AHORA entrada al taller"
+        colorClass="bg-custom-orange"
+        hoverColor="bg-custom-orange"
+        href="https://api.whatsapp.com/send?phone=+523333032063"
+      />
+      <Button
+        text="❤️‍🩹Quiero información para experiencia VIP + entrada al taller"
+        colorClass="bg-custom-orange"
+        hoverColor="bg-custom-orange"
+        href="/sucess"
+      />
+    </div>
+
     <FeatureSection
-      heading="¿Quienes somos?"
+      heading="¿Quien soy?"
       imageSrc={featureSectionThree}
       imageDescription="Gerardo Miramontes Main Landing Page Image"
       htmlContent={`
-				<p>
-          Dos experimentados creadores de contenido en marketing emocional y ventas con 5 años de experiencia en el campo. 
-				</p>
-				<br>
-				<p>
-          Gerardo ha sido 2 veces invitado a las reuniones de creadores de contenido de <b>TikTok</b>, como también ha sido <b>TEDx</b> speaker. 🎤
-				</p>
+				<p>Yo soy Gerardo Miramontes, y pase de vivir años donde mis propias heridas me llevaron a rupturas, vacíos y a perder 
+        y alejar personas con las que de verdad valía la pena compartir una vida.</p>
         <br>
-        <p>
-          Ha ayudado a marcas como <b>Deco Expres</b> a cerrar negocios con <b>Santa Clara</b> (una marca  de <b>Coca-Cola</b>), <b>Carl’s Jr</b>. 
-          <b>Farmacias Similares, Chivas F.C</b> y más marcas importantes. 
-        </p>
+        <p>A impulsar actualmente a una comunidad de más de 190,000 seguidores sumando todas mis redes sociales. Hombres y mujeres a los cuales por mas de 5 años he ayudado a mejorar y sanar sus vínculos para llegar a ese punto de conexión e intimidad real con ellos mismos, sus familias y sus parejas.</p>
         <br>
-        <p>
-          Como así mismo ha tenido por 5 años una <b>Marca Personal Fructífera</b> en el mundo del <b>desarrollo personal</b>, brindándole así la 
-          experiencia y el conocimiento del <b>campo emocional</b> y cómo este influye en las <b>decisiones de compra</b> y el <b>marketing</b>.
-        </p>
+        <p>También he tenido la oportunidad de ser:</p>
+        <br>
+        <p>TEDx speaker y trabajar con grandes Influncers, Artistas y figuras publicas del mundo de los negocios.</p>
 			`}
-      buttonText="Regístrate ahora"
     />
+
+    <div class="flex flex-col justify-center items-center mb-4 mx-4 space-y-4">
+      <!-- Cambiar texto del boton de registro aqui abajo -->
+      <Button
+        text="❤️‍🩹Comprar AHORA entrada al taller"
+        colorClass="bg-custom-orange"
+        hoverColor="bg-custom-orange"
+        href="https://api.whatsapp.com/send?phone=+523333032063"
+      />
+      <Button
+        text="❤️‍🩹Quiero información para experiencia VIP + entrada al taller"
+        colorClass="bg-custom-orange"
+        hoverColor="bg-custom-orange"
+        href="/sucess"
+      />
+    </div>
 
     <!-- Seccion de testimonios con videos -->
 
     <div class="text-white text-center max-w-4xl mx-auto px-4">
       <!-- H2 : Es el titulo de la seccion superior de testimonios, cambialo para actualizarlo -->
       <H2
-        text="Grandes marcas, grandes historias. Testimonios y resultados de los que han trabajado conmigo:"
+        text="Qué dicen las personas que ya han vivido esta experiencia y TRANSFORMADO sus RELACIONES y CONEXIONES:"
       />
       <div class="mx-auto my-6">
         <!-- Video de testimonio 1 -->
@@ -171,54 +251,72 @@ import featureSectionThree from "../../public/assets/featureSectionThree.webp";
 
       <!-- Es el titulo de la seccion inferior de testimonios, cambialo para actualizarlo  -->
       <p class="text-2xl">
-        ¿Qué esperas para ser parte de esta experiencia y que tu marca y negocio
-        no pierdan vigencia este 2025 y los años que vienen? ¡REGÍSTRATE YA!"
+        Como te dije en el video, deja de buscar fuera lo que esta aqui adentro,
+        cierra tu año diferente y ahorrate años de sufrimiento.
+      </p>
+      <br />
+      <p class="text-2xl">
+        NO TE NIEGUES + EL AMOR, QUE POR DERECHO ES TUYO. Ahí nos vemos.
       </p>
     </div>
+
+    <div class="mt-4 text-white">
+      <div class="text-center px-4">
+        <div class="flex justify-center">
+          <Image
+            src={projectLogo}
+            alt="Logo Sensible no frágil"
+            class="w-32 h-auto"
+          />
+        </div>
+        <p class="text-xl tracking-wider">#SENSIBLE, NO FRÁGIL</p>
+      </div>
+    </div>
+
+    <!-- Form js -->
+    <script>
+      // Get all necessary elements
+      const showFormButton = document.getElementById("showFormButton");
+      const registrationForm = document.getElementById("registrationForm");
+      const scrollTriggerButtons = document.querySelectorAll(".scroll-trigger");
+
+      // Function to show form
+      const showForm = () => {
+        if (showFormButton && registrationForm) {
+          showFormButton.classList.add("hidden");
+          registrationForm.classList.remove("hidden");
+        }
+      };
+
+      // Add click handler for main button
+      if (showFormButton && registrationForm) {
+        showFormButton.addEventListener("click", showForm);
+      }
+
+      // Add click handlers for all "Regístrate ahora" buttons
+      scrollTriggerButtons.forEach((button) => {
+        button.addEventListener("click", (e) => {
+          e.preventDefault();
+
+          // Show the form first
+          showForm();
+
+          // Add null check for registrationForm
+          if (!registrationForm) return;
+
+          // Calculate position to center the form in viewport
+          const formRect = registrationForm.getBoundingClientRect();
+          const absoluteFormTop = window.pageYOffset + formRect.top;
+          const offset =
+            absoluteFormTop - (window.innerHeight - formRect.height);
+
+          // Scroll to the calculated position
+          window.scrollTo({
+            top: offset,
+            behavior: "smooth",
+          });
+        });
+      });
+    </script>
   </Main>
 </Layout>
-
-<!-- Form js -->
-<script>
-  // Get all necessary elements
-  const showFormButton = document.getElementById("showFormButton");
-  const registrationForm = document.getElementById("registrationForm");
-  const scrollTriggerButtons = document.querySelectorAll(".scroll-trigger");
-
-  // Function to show form
-  const showForm = () => {
-    if (showFormButton && registrationForm) {
-      showFormButton.classList.add("hidden");
-      registrationForm.classList.remove("hidden");
-    }
-  };
-
-  // Add click handler for main button
-  if (showFormButton && registrationForm) {
-    showFormButton.addEventListener("click", showForm);
-  }
-
-  // Add click handlers for all "Regístrate ahora" buttons
-  scrollTriggerButtons.forEach((button) => {
-    button.addEventListener("click", (e) => {
-      e.preventDefault();
-
-      // Show the form first
-      showForm();
-
-      // Add null check for registrationForm
-      if (!registrationForm) return;
-
-      // Calculate position to center the form in viewport
-      const formRect = registrationForm.getBoundingClientRect();
-      const absoluteFormTop = window.pageYOffset + formRect.top;
-      const offset = absoluteFormTop - (window.innerHeight - formRect.height);
-
-      // Scroll to the calculated position
-      window.scrollTo({
-        top: offset,
-        behavior: "smooth",
-      });
-    });
-  });
-</script>

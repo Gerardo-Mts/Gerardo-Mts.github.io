@@ -1,19 +1,22 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Main from "../components/Main.astro";
-import H1 from "../components/H1.astro";
-import H2 from "../components/H2.astro";
+import H3 from "../components/H3.astro";
 import YouTubeVideo from "../components/YouTubeVideo.astro";
-import Button from "../components/Button.astro";
-import { FaWhatsapp } from "react-icons/fa";
+import Form from "../components/Form.astro";
+import { Image } from "astro:assets";
+import successPage from "../../public/assets/successPage.webp";
 ---
 
 <Layout title="Registro Confirmado!">
   <Main>
-    <H1 text="¡Registro Confirmado!" />
+    <div class="mx-3 rounded-lg text-center">
+      <H3
+        text="Muy bien Sensible, para pasarte toda la información personalmente sobre la experiencia exclusiva VIP en CDMX conmigo:"
+      />
+    </div>
     <div class="text-white text-center max-w-4xl mx-auto px-4">
-      <p class="text-2xl pb-8">Gracias por registrarte</p>
-      <div class="mx-auto my-6">
+      <!-- <div class="mx-auto my-6">
         <YouTubeVideo
           id="hvo55kDSdEc"
           title="Video Title"
@@ -21,29 +24,26 @@ import { FaWhatsapp } from "react-icons/fa";
           height={450}
           autoplay={true}
         />
-      </div>
+      </div> -->
 
-      <H2 text="Próximos pasos:" />
-
-      <div class="py-4">
-        <H2 text="Paso #1" />
-
-        <div class="text-center p-5">
-          <p class="text-xl">
-            Únete al grupo de WhatsApp. Será un medio de contacto exclusivo
-            entre tú y yo, donde vas a recibir todos los detalles de la
-            Masterclass.
-          </p>
-        </div>
-        <p class="text-lg">Grupo libre de SPAM.</p>
-      </div>
-
-      <div class="p-3">
-        <Button
-          href="https://chat.whatsapp.com/JaBaqLZIkQoGMccdj6wDQW"
-          text="Unirme al grupo de WhatsApp"
-          icon={FaWhatsapp}
+      <div class="flex justify-center my-10 mx-2 sm:mx-11">
+        <Image
+          class="w-full sm:w-4/5 md:w-7/12 lg:w-7/12 xl:w-7/12 h-auto object-contain sm:mx-11 aspect-w-4 aspect-h-3 rounded-lg"
+          src={successPage}
+          alt="Gerardo Miramontes Main Landing Page Image"
         />
+      </div>
+
+      <div class="">
+        <div class="text-center px-5 py-2">
+          <p class="text-xl">❤️‍🩹Círculo de la Reconexión y</p>
+          <p class="text-xl">❤️‍🩹 Círculo privado de Conexión Eterna</p>
+          <p class="text-xl">compárteme tus datos en este formulario:</p>
+        </div>
+
+        <div>
+          <Form />
+        </div>
       </div>
     </div>
   </Main>
