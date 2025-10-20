@@ -37,7 +37,8 @@ const {
     <!-- Content Section -->
     <div class="text-center md:text-left p-6">
       <H2 text={heading} />
-      <div class="my-6 text-lg text-white" set:html={htmlContent} />
+      <div
+        class="my-6 text-lg text-white [&_h3]:text-xl [&_h3]:font-bold [&_h3]:mb-3 [&_h3]:mt-4" set:html={htmlContent}/>
 
       {/* Only show button container if at least one button text is provided */}
       {
