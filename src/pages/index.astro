@@ -33,11 +33,16 @@ import projectLogo from "../../public/assets/projectLogo.webp";
 
     <!-- Subtitulo de la pagina -->
     <p class="text-white text-center text-2xl p-3">
+      <b>Un taller íntimo</b> donde descubrirás lo que ha bloqueado el flujo del
+      <b>amor real</b> que has <b>deseado por años en tus relaciones</b>.
+    </p>
+
+    <p class="text-white text-center text-2xl p-3">
       Viernes 12 y Sábado 13 de Diciembre 2025 📍CD<b>MX</b>
     </p>
 
     <!-- Imagen de bienvenida -->
-    <div class="text-white text-center max-w-4xl mx-auto px-4">
+    <!-- <div class="text-white text-center max-w-4xl mx-auto px-4">
       <div class="mx-auto my-6">
         <YouTubeVideo
           id="pzuGzEpAK3Y"
@@ -46,6 +51,22 @@ import projectLogo from "../../public/assets/projectLogo.webp";
           height={450}
           autoplay={true}
         />
+      </div>
+    </div> -->
+
+    <div class="text-white text-center max-w-4xl mx-auto px-4">
+      <div class="mx-auto my-6">
+        <vturb-smartplayer
+          id="vid-68f7f3938adf97fbc6a165ac"
+          style="display: block; margin: 0 auto; width: 100%;"
+        ></vturb-smartplayer>
+        <script type="text/javascript">
+          var s = document.createElement("script");
+          s.src =
+            "https://scripts.converteai.net/8397ee7e-5b34-4380-8288-000d65b1f3f4/players/68f7f3938adf97fbc6a165ac/v4/player.js";
+          s.async = true;
+          document.head.appendChild(s);
+        </script>
       </div>
     </div>
 
@@ -60,16 +81,10 @@ import projectLogo from "../../public/assets/projectLogo.webp";
 
     <!-- Boton de registro -->
     <!-- id="showFormButton" -->
-    <div class="flex flex-col justify-center items-center mt-10 m-4 space-y-4">
+    <div class="flex flex-col justify-center items-center mt-10 mx-4 space-y-4">
       <!-- Cambiar texto del boton de registro aqui abajo -->
       <Button
-        text="❤️‍🩹Comprar AHORA entrada al taller"
-        colorClass="bg-custom-orange"
-        hoverColor="bg-custom-orange"
-        href="https://buy.stripe.com/28EcN7fpCb9M7LX7FicQU01"
-      />
-      <Button
-        text="❤️‍🩹Quiero información para círculo de Conexión Eterna + entrada al taller"
+        text="❤️‍🩹 QUIERO MÁS INFORMACIÓN"
         colorClass="bg-custom-orange"
         hoverColor="bg-custom-orange"
         href="/sucess"
@@ -84,62 +99,43 @@ import projectLogo from "../../public/assets/projectLogo.webp";
     <!-- Features section -->
     <br />
     <FeatureSection
-      heading="¿Qué es esto y que incluye tu entrada al taller? 💌"
+      heading="¿Qué es esto y que incluye? 💌"
       imageSrc={featureSectionOne}
       imageDescription="Gerardo Miramontes Main Landing Page Image"
       htmlContent={`
-        <p>Un taller íntimo y <b>TRANSFORMADOR</b> donde aprenderás a identificar, sanar y reconectar con el <b>amor real</b> que has deseado <b>por años</b>.</p>
-        <br/>
         <h3 class="text-green-400">El acceso al taller tiene 2 modalidades:</h3>
-        <br>
         <ol class="list-decimal pl-5 pt-3 space-y-2">
-          <li>
-            <b>❤️‍🩹 Boleto al Círculo Taller</b>
+          <li class="space-y-3">
+            <b>❤️ CÍRCULO TALLER — Acceso General</b>
+            <p class="mb-3">Ideal para quienes quieren dar el <b>primer paso</b> a entender su historia y <b>por lo tanto transformar sus relaciones.</b></p>
+            <p class="font-bold text-green-400">✅ INCLUYE</p>
+            <ul class="list-disc pl-5 space-y-2 mt-2">
+              <li>🎟️ Acceso al taller vivencial "<b>Las 5 heridas del alma que arruinan tus relaciones</b>" (viernes 12 de diciembre 2025).</li>
+              <li>📕 Material de trabajo exclusivo para acompañarte paso a paso.</li>
+              <li>🧭 <b>10 semanas de seguimiento en vivo</b> conmigo después del evento.</li>
+              <li>🫂 Acceso a comunidad privada de apoyo y transformación.</li>
+              <li>🎁 <b>Bono especial</b>: descuento único para mi evento anual de planeación de metas y relaciones (3 enero 2026 - Hotel RIU <b>Guadalajara</b>).</li>
+              <li>📸 Foto conmemorativa y firma de material al final del evento.</li>
+            </ul>
           </li>
-          <li>
-            <b>❤️‍🔥 Boleto VIP al Círculo de la Conexión Eterna</b> (incluye experiencia exclusiva 1 a 1 conmigo  + entrada al taller)
+          
+          <li class="space-y-3 pt-4">
+            <b>❤️‍🔥 Círculo de Conexión Eterna — VIP</b>
+            <p class="mb-3">La experiencia <b>EXCLUSIVA</b> para quienes desean que <b>YO</b> los guíe y <b>acompañe de la mano</b> 1 a 1 a descubrir personalmente la raíz que provoca que tus <b>relaciones fracasen</b>. 💔</p>
+            <p class="font-bold text-green-400">✅ Incluye todo lo anterior, más:</p>
+            <ul class="list-disc pl-5 space-y-2 mt-5">
+              <li>🌇 <b>Charla privada (solo 15 personas)</b> el sábado 13 de diciembre a las <b>5:00 pm:</b> <b class="text-red-600">"No confundas al amor de tu vida con el amor de tus días"</b> En un rooftop con vista a la <b>Torre Latinoamericana</b>, fuera de un escenario, en un espacio íntimo para que me preguntes todo lo que necesites.</li>
+              <li>🥐 <b>Desayuno VIP:</b> trabajo <b>enfocado 100% en ti.</b> Usaremos técnica de <b>mayéutica, egograma, ejercicios escritos</b> y toda mi <b>experiencia</b> y <b>atención</b> solo en <b>ti</b> y un grupo aún mas <b>reducido y exclusivo</b>.</li>
+            </ul>
           </li>
         </ol>
-        <br>
-        <p><b>❤️‍🩹CÍRCULO TALLER — Acceso General</b></p>
-        <p>Ideal para quienes quieren dar el <b>primer paso</b> en su proceso de <b>sanación y transformación de relaciones</b>.</p>
-        <br>
-        <p>✅ Incluye:</p>
-        <ul class="list-disc pl-5 pt-3 space-y-2">
-          <li>❤️‍🩹 Acceso al taller vivencial “<b>Las 5 heridas del alma que arruinan tus relaciones</b>” viernes 12 de Diciembre 2025</li>
-          <li>📕 Material de trabajo exclusivo para acompañarte paso a paso</li>
-          <li>🎁 <b>BONO ESPECIAL</b>: Descuento único para mi <b>evento anual de planeación de metas y relaciones</b> (3 de enero 2026 – <b>Hotel RIU Guadalajara</b>)</li>
-          <li>🧭 10 semanas de <b>seguimiento exclusivo EN VIVO conmigo</b></li>
-          <li>🫂 Acceso a <b>comunidad privada</b> de apoyo y transformación</li>
-          <li>📸 <b>Foto conmemorativa conmigo</b> al final del evento de tu inicio en este proceso</li>
-        </ul>
-        <br>
-        <p><b>❤️‍🔥 CÍRCULO DE LA CONEXIÓN ETERNA — VIP</b></p>
-        <p>La experiencia <b>EXCLUSIVA</b> para quienes <b>quieren que yo los guíe y acompañe de la mano 1 a 1 personalmente en su proceso.</b></p>
-        <br>
-        <p>✨ Incluye todo lo anterior mencionado +</p>
-        <br>
-        <ul class="list-disc pl-5 pt-3 space-y-2">
-          <li>🌇 <b>Charla privada (solo para 15 personas)</b> sábado 13 de Diciembre a las 5:00 pm: “<b>No confundas 
-          al amor de tu vida con el amor de tus días</b>” → En un Roof con vista a la <b>Torre Latinoamericana</b> solo para un círculo íntimo y cercano <b>fuera de un 
-          escenario</b> para que me <b>preguntes</b> todo lo que necesitas + dinámicas exclusivas.</li>
-          <li>🥐 <b>Desayuno VIP</b>: trabajo personalizado con técnica de mayéutica, egograma y ejercicios escritos.</li>
-        </ul>
-        <br>
-        <p>👉🏻 En pocas palabras: <b>no solo compras un taller</b>, <b>compras un proceso completo de transformación</b>, con guía, comunidad y seguimiento real para que tu vida y tus relaciones cambien de raíz.</p>
       `}
     />
 
-    <div class="flex flex-col justify-center items-center mb-4 mx-4 space-y-4">
+    <div class="flex flex-col justify-center items-center mb-6 mx-4 space-y-4">
       <!-- Cambiar texto del boton de registro aqui abajo -->
       <Button
-        text="❤️‍🩹Comprar AHORA entrada al taller"
-        colorClass="bg-custom-orange"
-        hoverColor="bg-custom-orange"
-        href="https://buy.stripe.com/28EcN7fpCb9M7LX7FicQU01"
-      />
-      <Button
-        text="❤️‍🩹Quiero información para círculo de Conexión Eterna + entrada al taller"
+        text="❤️‍🩹 QUIERO MÁS INFORMACIÓN"
         colorClass="bg-custom-orange"
         hoverColor="bg-custom-orange"
         href="/sucess"
@@ -174,16 +170,10 @@ import projectLogo from "../../public/assets/projectLogo.webp";
       `}
     />
 
-    <div class="flex flex-col justify-center items-center mb-4 mx-4 space-y-4">
+    <div class="flex flex-col justify-center items-center mb-6 mx-4 space-y-4">
       <!-- Cambiar texto del boton de registro aqui abajo -->
       <Button
-        text="❤️‍🩹Comprar AHORA entrada al taller"
-        colorClass="bg-custom-orange"
-        hoverColor="bg-custom-orange"
-        href="https://buy.stripe.com/28EcN7fpCb9M7LX7FicQU01"
-      />
-      <Button
-        text="❤️‍🩹Quiero información para círculo de Conexión Eterna + entrada al taller"
+        text="❤️‍🩹 QUIERO MÁS INFORMACIÓN"
         colorClass="bg-custom-orange"
         hoverColor="bg-custom-orange"
         href="/sucess"
@@ -202,20 +192,16 @@ import projectLogo from "../../public/assets/projectLogo.webp";
         <br>
         <p>También he tenido la oportunidad de ser:</p>
         <br>
-        <p><b>TEDx</b> speaker y trabajar con grandes <b>Influencers, Artistas y figuras publicas</b> del mundo de los negocios.</p>
+        <p><b class="text-red-600">TEDx</b> speaker y trabajar con grandes <b>Influencers, Artistas y figuras publicas</b> del mundo de los <b>negocios.</b></p>
+        <br>
+        <p>En Instagram me encuentras como: <b>@gerardo_miramontess</b></p>
       `}
     />
 
-    <div class="flex flex-col justify-center items-center mb-4 mx-4 space-y-4">
+    <div class="flex flex-col justify-center items-center mb-6 mx-4 space-y-4">
       <!-- Cambiar texto del boton de registro aqui abajo -->
       <Button
-        text="❤️‍🩹Comprar AHORA entrada al taller"
-        colorClass="bg-custom-orange"
-        hoverColor="bg-custom-orange"
-        href="https://buy.stripe.com/28EcN7fpCb9M7LX7FicQU01"
-      />
-      <Button
-        text="❤️‍🩹Quiero información para círculo de Conexión Eterna + entrada al taller"
+        text="❤️‍🩹 QUIERO MÁS INFORMACIÓN"
         colorClass="bg-custom-orange"
         hoverColor="bg-custom-orange"
         href="/sucess"
@@ -275,7 +261,10 @@ import projectLogo from "../../public/assets/projectLogo.webp";
             class="w-32 h-auto"
           />
         </div>
-        <p class="text-xl tracking-wider">#SENSIBLE, NO FRÁGIL</p>
+        <p class="text-xl tracking-wider">
+          #SENSIBLE,<br />
+          NO FRÁGIL
+        </p>
       </div>
     </div>
 

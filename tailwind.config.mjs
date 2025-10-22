@@ -7,7 +7,7 @@ export default {
 
 			colors: {
 				vividGreen: '#00AB35',
-				'custom-orange': '#F27507',
+				'custom-orange': '#F26A4F',
 				'custom-orange-hover': '#F25116',
 				'custom-white-beige': '#F9F8F3',
 				'red-love': '#9E0605',
