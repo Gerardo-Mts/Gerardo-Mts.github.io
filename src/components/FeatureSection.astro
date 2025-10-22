@@ -25,20 +25,27 @@ const {
 
 <div class="container mx-auto my-4 sm:p-4 sm:my-7">
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-    <!-- Image Section -->
-    <div class="flex justify-center p-3">
-      <Image
-        class="w-full sm:w-10/12 h-auto object-cover sm:p-0 rounded-lg"
-        src={imageSrc}
-        alt={imageDescription}
-      />
+    <div class="space-y-4">
+      <div class="text-center md:text-left m-3">
+        <H2 text={heading} />
+      </div>
+
+      <!-- Image Section -->
+      <div class="flex justify-center p-3">
+        <Image
+          class="w-full sm:w-10/12 h-auto object-cover sm:p-0 rounded-lg"
+          src={imageSrc}
+          alt={imageDescription}
+        />
+      </div>
     </div>
 
     <!-- Content Section -->
     <div class="text-center md:text-left p-6">
-      <H2 text={heading} />
       <div
-        class="my-6 text-lg text-white [&_h3]:text-xl [&_h3]:font-bold [&_h3]:mb-3 [&_h3]:mt-4" set:html={htmlContent}/>
+        class="my-6 text-lg text-white [&_h3]:text-xl [&_h3]:font-bold [&_h3]:mb-3 [&_h3]:mt-4 [&_p]:mb-3 [&_ul]:mt-3 [&_ul]:mb-3 [&_ol]:mt-3 [&_ol]:mb-3 [&_li]:mb-1"
+        set:html={htmlContent}
+      />
 
       {/* Only show button container if at least one button text is provided */}
       {

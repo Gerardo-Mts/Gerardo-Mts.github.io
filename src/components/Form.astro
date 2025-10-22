@@ -15,7 +15,7 @@ import Button from "./Button.astro";
     id="nameElement"
     class="flex items-center bg-white rounded-full py-2 px-4"
   >
-    <span class="text-gray-500 pr-3">📛</span>
+    <span class="text-gray-500 pr-3">❤️‍🩹</span>
     <input
       class="appearance-none bg-transparent border-none w-full text-gray-700 py-2 px-4 rounded-full focus:outline-none"
       type="text"
@@ -95,10 +95,7 @@ import Button from "./Button.astro";
   </div>
 
   <!-- Question 2 field -->
-  <div 
-    id="questionTwoElement"
-    class="space-y-3"
-  >
+  <div id="questionTwoElement" class="space-y-3">
     <div class="text-white text-m">
       <p class="font-semibold">
         ¿Sueles invertir tiempo y dinero en tu crecimiento personal?
@@ -148,10 +145,21 @@ import Button from "./Button.astro";
         const countryCodeSelect = document.getElementById(
           "countryCode"
         ) as HTMLSelectElement;
-        const questionOneInput = document.getElementById("question1") as HTMLInputElement;
-        const questionTwoInput = document.getElementById("question2") as HTMLInputElement;
+        const questionOneInput = document.getElementById(
+          "question1"
+        ) as HTMLInputElement;
+        const questionTwoInput = document.getElementById(
+          "question2"
+        ) as HTMLInputElement;
 
-        if (nameInput && emailInput && phoneInput && countryCodeSelect && questionOneInput && questionTwoInput) {
+        if (
+          nameInput &&
+          emailInput &&
+          phoneInput &&
+          countryCodeSelect &&
+          questionOneInput &&
+          questionTwoInput
+        ) {
           const name = nameInput.value.trim();
           const email = emailInput.value.trim();
           const phone = phoneInput.value.trim();
