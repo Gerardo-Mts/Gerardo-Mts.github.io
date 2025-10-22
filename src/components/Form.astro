@@ -175,6 +175,8 @@ import Button from "./Button.astro";
             !name ||
             !email ||
             !phone ||
+            !questionOne ||
+            !questionTwo ||
             !emailRegex.test(email) ||
             !phoneRegex.test(phone)
           ) {
@@ -186,6 +188,11 @@ import Button from "./Button.astro";
             else if (!phone) errorText = "Por favor llena tu teléfono";
             else if (!phoneRegex.test(phone))
               errorText = "Por favor ingresa un teléfono válido";
+            else if (!questionOne)
+              errorText = "Por favor responde qué te gustaría sanar o aprender";
+            else if (!questionTwo)
+              errorText =
+                "Por favor compártenos sobre tu inversión en crecimiento personal";
 
             if (errorMessage) {
               errorMessage.textContent = errorText;
