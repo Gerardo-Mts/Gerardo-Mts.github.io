@@ -22,25 +22,28 @@ import projectLogo from "../../public/assets/projectLogo.webp";
 <Layout title="Gerardo Miramontes">
   <Main>
     <!-- H1 : Es el titulo de la pagina, cambialo para actualizarlo -->
-    <h1
-      class=`text-4xl text-white font-next-art font-bold mb-3 text-center uppercase`
-      style="text-shadow: 0.5px 0.5px 0.5px rgba(188, 188, 188, 0.801);"
-    >
-      TALLER VIVENCIAL: <strong class="text-red-love"
-        >LAS 5 HERIDAS DEL ALMA QUE ARRUINAN TUS RELACIONES</strong
-      >
-    </h1>
+    <div class="m-5 mx-2 sm:mx-11 text-white text-center">
+      <h2 class="text-2xl sm:text-3xl font-bold">
+        NO VEAS ESTO SI <span class="text-red-600">YA ESTÁS FELIZ</span>
+        <br class="sm:hidden" />
+        CON TUS <span class="text-red-600">RELACIONES</span>
+      </h2>
 
-    <!-- Subtitulo de la pagina -->
-    <p class="text-white text-center text-2xl p-3">
-      <b>Un taller íntimo</b> donde descubrirás lo que ha bloqueado el flujo del
-      <b>amor real</b> que has <b>deseado por años en tus relaciones</b>.
-    </p>
+      <hr
+        class="border-t-2 border-dashed border-orange-700 my-6 max-w-sm mx-auto"
+      />
 
-    <p class="text-white text-center text-2xl p-3">
-      Viernes 12 y Sábado 13 de Diciembre 2025 📍CD<b>MX</b>
-    </p>
-
+      <p class="text-lg sm:text-xl max-w-3xl mx-auto">
+        <b>Un taller íntimo presencial</b> donde descubrirás que ha bloqueado el
+        flujo del <b>amor</b> que has <b>deseado por años en tus relaciones.</b>
+        Lograrás sanar de
+        <b>raíz y reconectar</b>
+        <strong class="text-red-600">
+          con el amor desde la Correspondencia y no desde las Migajas en solo 4
+          horas
+        </strong>
+      </p>
+    </div>
     <!-- Imagen de bienvenida -->
     <!-- <div class="text-white text-center max-w-4xl mx-auto px-4">
       <div class="mx-auto my-6">
@@ -81,14 +84,43 @@ import projectLogo from "../../public/assets/projectLogo.webp";
 
     <!-- Boton de registro -->
     <!-- id="showFormButton" -->
-    <div class="flex flex-col justify-center items-center mt-10 mx-4 space-y-4">
+    <div
+      class="flex flex-col justify-center items-center mt-10 mx-4 space-y-4 text-white text-center"
+    >
       <!-- Cambiar texto del boton de registro aqui abajo -->
+      <p class="text-lg max-w-3xl mx-auto">
+        Taller <b class="text-red-600">las 5 heridas del alma</b> que arruinan tus
+        relaciones Viernes <b>12</b> de
+        <b>Diciembre</b> 2025 📍CD<b>MX</b>
+      </p>
+      <p class="text-xl max-w-3xl mx-auto text-red-600">
+        <b>(Solo para 20 personas)</b>
+      </p>
+      <br />
       <Button
         text="❤️‍🩹 DESCUBRE SI ESTE TALLER ES PARA TI"
         colorClass="bg-custom-orange"
         hoverColor="bg-custom-orange"
         href="/sucess"
       />
+
+      <div
+        class="bg-black text-white p-4 rounded-lg max-w-xs w-full mt-4 shadow-lg"
+      >
+        <p class="text-sm sm:text-sm text-center mb-2">
+          Ya se han agotado el <b>76%</b> de las entradas al taller
+        </p>
+        <div
+          class="w-full bg-gray-900 rounded-full h-6 p-0.5 border-2 border-custom-orange"
+        >
+          <div
+            class="bg-custom-orange h-full rounded-full flex items-center justify-end pr-2"
+            style="width: 76%;"
+          >
+            <span class="text-xs font-medium text-white">76%...</span>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div id="registrationForm" class="hidden">
